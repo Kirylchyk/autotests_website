@@ -25,6 +25,13 @@ def test_check_call_now(driver):
     assert home_page.call_now_button.is_enabled()
 
 
+def test_background_image(driver):
+    home_page = HomePage(driver)
+    home_page.open()
+    driver.implicitly_wait(10)
+    assert home_page.image_background.is_displayed()
+
+
 def test_instagram_link(driver):
     home_page = HomePage(driver)
     home_page.open()
@@ -46,9 +53,3 @@ def test_instagram_link(driver):
 #     driver.switch_to.window(driver.window_handles[1])
 #     get_url = driver.current_url
 #     assert get_url in "https://www.facebook.com/thesalondecorum"
-
-
-
-
-
-

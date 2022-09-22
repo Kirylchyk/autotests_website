@@ -8,4 +8,4 @@ def driver():
     chrome_driver.maximize_window()
     chrome_driver.implicitly_wait(10)
     yield chrome_driver
-    chrome_driver.quit()
+    # chrome_driver.quit()
