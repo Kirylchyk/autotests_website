@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 about_us_button = (By.XPATH, '//*[@id="header"]/div[2]/div[3]/div[2]/div[1]/div[2]/div/nav/div[2]/a')
 logo_button = (By.XPATH, '//*[@id="header"]/div[2]/div[3]/div[2]/div[1]/div[1]/div/a/img')
 company_image = (By.XPATH, '//*[@id="sections"]/section[1]')
+company_email = (By.XPATH, '//*[@id="block-c5578ab8171c75296c12"]/div/p[3]/a')
 
 
 class AboutPage(BasePage):
@@ -25,3 +26,8 @@ class AboutPage(BasePage):
     @property
     def about_us_button(self):
         return self.find_element(about_us_button)
+
+
+    @property
+    def company_email(self):
+        return self.find_element(company_email)
