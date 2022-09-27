@@ -9,7 +9,6 @@ SEARCH_EMPTY = '1!@#$%67'
 def test_check_logo(driver):
     shop_page = ShopPage(driver)
     shop_page.open()
-    # shop_page.banner.click()
     driver.implicitly_wait(10)
     assert shop_page.logo_button.is_displayed()
 
@@ -76,19 +75,6 @@ def test_search_hover_over(driver):
     ActionChains(driver).move_to_element(shop_page.search_result).perform()
     assert shop_page.popup_buttons.is_enabled()
 
-
-def test_popup_buttons_view(driver):
-    shop_page = ShopPage(driver)
-    shop_page.open()
-    # shop_page.banner.click()
-    driver.implicitly_wait(10)
-    shop_page.search_field.send_keys(SEARCH)
-    shop_page.search_button.click()
-    ActionChains(driver).move_to_element(shop_page.search_result). \
-        move_to_element(shop_page.popup_buttons).pause(3).perform()
-    ActionChains(driver).move_to_element(shop_page.popup_button_view).pause(3). \
-        click(shop_page.popup_button_view).pause(3).perform()
-    assert shop_page.button_cart.is_enabled()
 
 
 

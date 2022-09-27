@@ -47,6 +47,3 @@ def test_product_is_added(driver):
     description_cart_raw = cart_page.product_description_in_cart.text
     description_cart_low = description_cart_raw.lower()
     assert description_low == description_cart_low
-
-
-

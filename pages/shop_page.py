@@ -17,7 +17,6 @@ no_results_message = (By.XPATH, '//*[@id="content"]/p')
 results_text = (By.XPATH, '/html/body/div[2]/div/div/div/h1')
 search_result = (By.XPATH, '//*[@id="content"]/div[3]/div[1]/div/div/div[1]/a/div[1]/img')
 popup_buttons = (By.CLASS_NAME, 'button-group')
-popup_button_view = (By.XPATH, '//*[@id="content"]/div[3]/div[1]/div/div/div[1]/div/div/a/i')
 alert_message = (By.CLASS_NAME, 'alert')
 button_cart = (By.ID, 'button-cart')
 
