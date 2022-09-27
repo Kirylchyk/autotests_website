@@ -175,7 +175,7 @@ def test_login_positive(driver):
     driver.implicitly_wait(10)
     ActionChains(driver).move_to_element(register_page.my_account_dropdown).\
         click(register_page.my_account_dropdown).\
-        move_to_element(register_page.register_link).\
+        move_to_element(register_page.login_link).\
         click(register_page.login_link).perform()
     register_page.input_email.send_keys(EMAIL)
     register_page.input_password.send_keys(PASSWORD)
@@ -214,7 +214,3 @@ def test_login_empty_password(driver):
     ActionChains(driver).move_to_element(register_page.my_account_dropdown). \
         click(register_page.my_account_dropdown).perform()
     assert register_page.login_alert.is_displayed()
-
-
-
-

@@ -4,11 +4,11 @@ from pages.cart_page import CartPage
 def test_product_detailed_page(driver):
     cart_page = CartPage(driver)
     cart_page.open()
-    cart_page.banner.click()
     driver.implicitly_wait(10)
+    # cart_page.banner.click()
     cart_page.first_product.click()
     driver.implicitly_wait(10)
-    assert cart_page.cart_button.is_displayed()
+    assert cart_page.cart_button.is_enabled()
 
 
 def test_remove_product(driver):

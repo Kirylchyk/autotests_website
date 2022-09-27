@@ -10,6 +10,7 @@ def test_check_logo(driver):
     shop_page = ShopPage(driver)
     shop_page.open()
     driver.implicitly_wait(10)
+    shop_page.banner.click()
     assert shop_page.logo_button.is_displayed()
 
 
