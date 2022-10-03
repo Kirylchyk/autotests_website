@@ -14,7 +14,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
   && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" \
         > /etc/apt/sources.list.d/google.list \
   && apt-get -qy update \
-  && apt-get -qy install -y google-chrome-stable \
+  && apt-get -qy install -y google-chrome-stable=106.0.5249.91-1 \
   && apt-get -qyy autoremove \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get -qyy clean \
@@ -25,7 +25,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
 #==================
 # Credits to https://github.com/elgalu/docker-selenium
 # https://chromedriver.storage.googleapis.com/107.0.5304.18/chromedriver_linux64.zip
-ENV CHROME_DRIVER_VERSION="107.0.5304.18" \
+ENV CHROME_DRIVER_VERSION="106.0.5249.61" \
     CHROME_DRIVER_BASE="chromedriver.storage.googleapis.com" \
     CPU_ARCH="64"
 ENV CHROME_DRIVER_FILE="chromedriver_linux${CPU_ARCH}.zip"
