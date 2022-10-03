@@ -1,8 +1,10 @@
 """Module providingFunction printing python version."""
+import allure
+
+
 from time import sleep
 from pages.home_page import HomePage
 from selenium.webdriver.common.action_chains import ActionChains
-import allure
 
 
 @allure.feature("Home Page")
