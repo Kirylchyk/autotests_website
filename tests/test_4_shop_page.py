@@ -15,7 +15,7 @@ def test_check_logo(driver):
     with allure.step('Open page'):
         shop_page = ShopPage(driver)
         shop_page.open()
-    shop_page.banner.click()
+    # shop_page.banner.click()
     assert shop_page.logo_button.is_displayed()
 
 

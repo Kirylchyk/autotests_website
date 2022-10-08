@@ -1,6 +1,7 @@
 """Module providingFunction printing python version."""
-from pages.about_us_page import AboutPage
+import sys
 import allure
+from pages.about_us_page import AboutPage
 
 
 @allure.feature("About Us")
@@ -13,6 +14,8 @@ def test_check_logo_button(driver):
     about_page.about_us_button.click()
     about_page.logo_button.click()
     get_url = driver.current_url
+    if sys.exc_info()[0]:
+        driver.get_screenshot_as_file('screenshot.png')
     assert get_url in "https://www.thesalondecorum.com/"
 
 

@@ -1,9 +1,8 @@
 """Module providingFunction printing python version."""
-from time import sleep
+import allure
 from pages.register_page import RegisterPage
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
-import allure
 
 
 FIRST_NAME = 'Mary'
@@ -27,7 +26,7 @@ def test_register_form_open(driver):
     with allure.step('Open page'):
         register_page = RegisterPage(driver)
         register_page.open()
-        # register_page.banner.click()
+        #register_page.banner.click()
     ActionChains(driver).move_to_element(register_page.my_account_dropdown).\
         click(register_page.my_account_dropdown).\
         move_to_element(register_page.register_link).\
@@ -98,7 +97,6 @@ def test_register_form_validate_mobile(driver):
         register_page.password.send_keys(PASSWORD)
         register_page.confirm_password.send_keys(CONFIRM_PASSWORD)
     register_page.submit_button.click()
-    sleep(5)
     assert register_page.mobile_error_message.is_enabled()
 
 

@@ -1,7 +1,6 @@
 """Module providingFunction printing python version."""
-from time import sleep
-from pages.cart_page import CartPage
 import allure
+from pages.cart_page import CartPage
 
 
 @allure.feature("Cart Page")
@@ -27,7 +26,6 @@ def test_remove_product(driver):
     with allure.step('Add product'):
         cart_page.first_product.click()
         cart_page.cart_button.click()
-    sleep(5)
     cart_page.remove_button.click()
     assert cart_page.empty_cart.is_displayed()
 
